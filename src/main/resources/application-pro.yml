@@ -2,7 +2,7 @@ server:
   port: 8082
 
 rocketmq:
-  name-server: 192.168.30.135:9876 # 访问地址
+  name-server: http://192.168.30.135:9876 # 访问地址
   producer:
     group: Pro_Group # 必须指定group
     send-message-timeout: 3000 # 消息发送超时时长，默认3s

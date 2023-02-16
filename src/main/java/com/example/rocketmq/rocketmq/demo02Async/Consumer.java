@@ -22,7 +22,7 @@ import java.util.List;
  * @author lishuai
  * @date 2023/2/15
  */
-public class Comsumer {
+public class Consumer {
     public static void main(String[] args) throws MQClientException {
 
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("base-Consumer2");

@@ -32,8 +32,12 @@ public class Producer {
             message.add(new Message("topic3","tag3",s.getBytes()));
         }
 
-        SendResult send = producer.send(message);
-        System.out.println("发送--》"+send);
+        MessageListSplitter splitter = new MessageListSplitter(message);
+
+        while (splitter.hasNext()){
+            List<Message> next = splitter.next();
+            SendResult send = producer.send(message);
+        }
 
         producer.shutdown();
     }
