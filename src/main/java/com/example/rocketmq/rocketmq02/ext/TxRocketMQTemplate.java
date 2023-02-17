@@ -9,7 +9,7 @@
 // * @Description:
 // **/
 //
-//@ExtRocketMQTemplateConfiguration(nameServer = "")
+//@ExtRocketMQTemplateConfiguration
 //public class TxRocketMQTemplate extends RocketMQTemplate {
 //
 //}
