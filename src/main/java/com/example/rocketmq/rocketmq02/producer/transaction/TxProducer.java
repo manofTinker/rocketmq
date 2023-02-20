@@ -33,12 +33,9 @@ public class TxProducer {
         UUID uuid = UUID.randomUUID();
 
         OrderPay pay = new OrderPay();
-        long mony = (long) Math.random() * 10000;
-        BigDecimal bigDecimal = BigDecimal.valueOf(mony);
-        log.info("money:{}",bigDecimal);
         String id = UUID.randomUUID().toString();
         pay.setMsgid(id);
-        pay.setMoney(bigDecimal);
+        pay.setMoney(new BigDecimal(Math.random()*10000));
 
         Message<OrderPay> message = MessageBuilder
                 .withPayload(pay)
