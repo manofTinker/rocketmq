@@ -1,6 +1,7 @@
 package com.example.rocketmq.rocketmq02.controller;
 
 import com.example.rocketmq.rocketmq02.producer.*;
+import com.example.rocketmq.rocketmq02.producer.transaction.TxProducer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,12 @@ public class MQController {
 
     @Autowired
     private ReplyProducer replyProducer;
+
+    @Autowired
+    private ScheduleProducer scheduleProducer;
+
+    @Autowired
+    private TxProducer txProducer;
 
     @GetMapping("/sync")
     public void syncSend() {
@@ -59,8 +66,19 @@ public class MQController {
         orderProducer.orderSend();
     }
 
+    @GetMapping("/reply")
     public void replySend() {
         replyProducer.replySend();
+    }
+
+    @GetMapping("/schedule")
+    public void scheduleSend() {
+        scheduleProducer.scheduleSend();
+    }
+
+    @GetMapping("/tx")
+    public void Tx() {
+        txProducer.tx();
     }
 
 }
